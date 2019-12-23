@@ -6,11 +6,11 @@ const INITIAL_SATE = {
 
 export default function user(state = INITIAL_SATE, action) {
   switch (action.type) {
-    case "@auth/SIGN_IN_SUCCESS":
+    case "@auth/SUCCESS":
       return produce(state, draft => {
         draft.profile = action.payload.user;
-        draft.signed = true;
       });
+
     default:
       return state;
   }
