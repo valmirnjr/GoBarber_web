@@ -8,7 +8,7 @@ export default function user(state = INITIAL_SATE, action) {
   switch (action.type) {
     case "@auth/SIGN_IN_SUCCESS":
       return produce(state, draft => {
-        draft.token = action.payload.user;
+        draft.profile = action.payload.user;
         draft.signed = true;
       });
     default:
