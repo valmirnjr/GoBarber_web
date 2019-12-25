@@ -69,12 +69,14 @@ export default function Notifications() {
             <Notification key={notification._id} unread={!notification.read}>
               <p>{notification.content}</p>
               <time>{notification.timeDistance}</time>
-              <button
-                onClick={() => handleMarkAsRead(notification._id)}
-                type="button"
-              >
-                Mark as read
-              </button>
+              {!notification.read && (
+                <button
+                  onClick={() => handleMarkAsRead(notification._id)}
+                  type="button"
+                >
+                  Mark as read
+                </button>
+              )}
             </Notification>
           ))}
         </Scroll>
